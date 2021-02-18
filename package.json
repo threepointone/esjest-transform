@@ -1,0 +1,30 @@
+{
+  "name": "esjest-transform",
+  "version": "0.0.1",
+  "description": "A fast jest transform",
+  "main": "src/index.js",
+  "repository": "https://github.com/threepointone/esjest-transform",
+  "author": "Sunil Pai <threepointone@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@jest/globals": "^26.6.2",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "typescript": "^4.1.5",
+    "vite": "^2.0.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/plugin-transform-modules-commonjs": "^7.12.13",
+    "babel-jest": "^26.6.3",
+    "esbuild": "^0.8.46"
+  },
+  "scripts": {
+    "test": "jest --config app/__tests__/jest.config.js",
+    "app": "yarn vite app"
+  }
+}
