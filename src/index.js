@@ -11,6 +11,7 @@ const babelTransformer = babelJest.createTransformer({
 
 const loaders = ["js", "jsx", "ts", "tsx", "json"];
 module.exports = {
+  canInstrument: true,
   createTransformer(options) {
     return {
       process(input, filepath, config, transformOptions) {
@@ -20,7 +21,7 @@ module.exports = {
         const { esbuild: esbuildOptions } = transformOptions;
         let result;
 
-        if (input.indexOf("ock(") >= 0) {
+        if (input.indexOf("ock(") >= 0 || transformOptions.instrument) {
           result = babelTransformer.process(
             input,
             filepath,
