@@ -1,6 +1,6 @@
 {
   "name": "esjest-transform",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A fast jest transform",
   "main": "./src/index.js",
   "repository": "https://github.com/threepointone/esjest-transform",
