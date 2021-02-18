@@ -14,20 +14,25 @@ module.exports = {
   createTransformer(options) {
     return {
       process(input, filepath, config, transformOptions) {
-        // TODO: only use babel if "mock(" is in the source or if coverage true
+        // TODO: implement cacheKey
         // TODO: import.meta via  @babel/plugin-transform-import-meta/ babel-plugin-transform-import-meta
+        // TODO: should probably disable babelrc resolution
         const { esbuild: esbuildOptions } = transformOptions;
+        let result;
 
-        const babelResult = babelTransformer.process(
-          input,
-          filepath,
-          config,
-          transformOptions
-        );
+        if (input.indexOf("ock(") >= 0) {
+          result = babelTransformer.process(
+            input,
+            filepath,
+            config,
+            transformOptions
+          );
+        } else result = { code: input };
+
         const ext = path.extname(filepath).slice(1);
 
-        const transformed = esbuild.transformSync(babelResult.code, {
-          loader: loaders.includes(ext) ? ext : "text",
+        const transformed = esbuild.transformSync(result.code, {
+          loader: ext === "js" ? "jsx" : loaders.includes(ext) ? ext : "text",
           sourcemap: true,
           sourcesContent: true,
           sourcefile: filepath,
