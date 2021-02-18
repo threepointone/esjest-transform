@@ -1,8 +1,8 @@
 {
   "name": "esjest-transform",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A fast jest transform",
-  "main": "src/index.js",
+  "main": "./src/index.js",
   "repository": "https://github.com/threepointone/esjest-transform",
   "author": "Sunil Pai <threepointone@gmail.com>",
   "license": "MIT",
