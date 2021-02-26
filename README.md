@@ -1,6 +1,6 @@
 # esjest-transform
 
-(work in progress, but feel free to give it a spin)
+(DEPRECATED, use [esbuild-jest](https://github.com/aelbore/esbuild-jest/) instead)
 
 A fast jest transform.
 
